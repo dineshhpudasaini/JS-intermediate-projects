@@ -75,12 +75,12 @@
         let notes = document.querySelectorAll(".input-box");
 
         function showNotes(){
-            notesContainer.innerHTML = locakStorage.getItem("notes");
+            notescontainer.innerHTML = localStorage.getItem("notes");
         }
         showNotes();
 
         function updateStorage(){
-            localStorage.setItem("notes",notesContainer.innerHTML);
+            localStorage.setItem("notes",notescontainer.innerHTML);
         }
 
         createbtn.addEventListener("click",()=>{
@@ -97,13 +97,19 @@
                 e.target.parentElement.remove();
                 updateStorage();
             }
-            elseif(e.target.tagName === "P"){
+            else if(e.target.tagName === "P"){
                 notes = document.querySelectorAll(".input-box");
                 notes.forEach(nt =>{
                     nt.onkeyup = function(){
                         updateStorage();
                     }
                 })
+            }
+        })
+        document.addEventListener("keydown",event=>{
+            if(event.key==="enter"){
+                document.execCommand("insertLineBreak");
+                event.preventDefault();
             }
         })
     </script>
