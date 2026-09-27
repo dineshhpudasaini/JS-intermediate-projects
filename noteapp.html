@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family:sans-serif;
+            box-sizing:border-box;
+        }
+        .container{
+            width:100%;
+            min-height:100vh;
+            background:linear-gradient(135deg,#cf9aff,#95c0ff);
+            color:#fff;
+            padding-top:4%;
+            padding-left:10%
+        }
+        .container h1{
+            display:flex;
+            align-items:center;
+            font-size:35px;
+            font-weight:600;
+        }
+        .container button{
+            display:flex;
+            align-items:center;
+            background:linear-gradient(#9418fd,#571094);
+            color:#fff;
+            font-size:16px;
+            outline:0;
+            border:0;
+            border-radius:40px;
+            padding:15px 25px;
+            margin:30px 0 20px;
+        }
+        .input-box{
+            position:relative;
+            width:100%;
+            max-width:500px;
+            min-height:150px;
+            background:#fff;
+            color:#333;
+            padding:20px;
+            margin:20px 0;
+            outline:none;
+            border-radius:5px;
+        }
+        .input-box img{
+            position:absolute;
+            bottom:15px;
+            right:15px;
+            cursor:pointer;
+            border-radius:20px;
+            width:25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Notes</h1>
+        <button class = "btn">Create Notes</button>
+        <div class="notes-container">
+            <P contenteditable="true" class = "input-box">
+                <img src = "https://img.icons8.com/?size=100&id=67884&format=png&color=000000">
+            </P>
+        </div>
+    </div>
+    <script>
+        const notescontainer = document.querySelector(".notes-container");
+        const createbtn = document.querySelector(".btn");
+        let notes = document.querySelectorAll(".input-box");
+
+        createbtn.addEventListener("click",()=>{
+            let inputBox = document.createElement("p");
+            let img = document.createElement("img");
+            inputBox.className = "input-box";
+            inputBox.setAttribute("contenteditable","true");
+            img.src= "https://img.icons8.com/?size=100&id=67884&format=png&color=000000";
+            notescontainer.appendChild(inputBox).appendChild(img);
+        })
+    </script>
+</body>
+</html>
