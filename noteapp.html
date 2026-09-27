@@ -64,15 +64,24 @@
         <h1>Notes</h1>
         <button class = "btn">Create Notes</button>
         <div class="notes-container">
-            <P contenteditable="true" class = "input-box">
+            <!-- <P contenteditable="true" class = "input-box">
                 <img src = "https://img.icons8.com/?size=100&id=67884&format=png&color=000000">
-            </P>
+            </P> -->
         </div>
     </div>
     <script>
         const notescontainer = document.querySelector(".notes-container");
         const createbtn = document.querySelector(".btn");
         let notes = document.querySelectorAll(".input-box");
+
+        function showNotes(){
+            notesContainer.innerHTML = locakStorage.getItem("notes");
+        }
+        showNotes();
+
+        function updateStorage(){
+            localStorage.setItem("notes",notesContainer.innerHTML);
+        }
 
         createbtn.addEventListener("click",()=>{
             let inputBox = document.createElement("p");
@@ -81,6 +90,21 @@
             inputBox.setAttribute("contenteditable","true");
             img.src= "https://img.icons8.com/?size=100&id=67884&format=png&color=000000";
             notescontainer.appendChild(inputBox).appendChild(img);
+        })
+
+        notescontainer.addEventListener("click",(e)=>{
+            if(e.target.tagName==="IMG"){
+                e.target.parentElement.remove();
+                updateStorage();
+            }
+            elseif(e.target.tagName === "P"){
+                notes = document.querySelectorAll(".input-box");
+                notes.forEach(nt =>{
+                    nt.onkeyup = function(){
+                        updateStorage();
+                    }
+                })
+            }
         })
     </script>
 </body>
