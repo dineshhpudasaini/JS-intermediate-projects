@@ -4,11 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            font-family:sans-serif;
+            box-sizing:border-box;
+        }
+        .container{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+            background:linear-gradient(#fff , blue)
+        }
+        .inputs{
+            height:400px;
+            width:400px;
+            border:2px , solid ,black;
+        }
+        .inputs input{
+            height:35px;
+            width:600px;
+            margin:10px;
+            padding:20px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <input placeholder = "Username" id = "username" id = "username">
+       <div class="inputs">
+         <input placeholder = "Username" id = "username" id = "username">
         <input placeholder = "Password" id = "password" type = "Password">
+        </div>
     </div>
 </body>
 </html>
