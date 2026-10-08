@@ -12,28 +12,68 @@
             font-family:sans-serif;
         }
         body{
-            height:100%;
-            width:100%
-        }
-        .container{
             display:flex;
             justify-content:center;
             align-items:center;
-            height:600px;
+        }
+        .container{ 
+            margin-top:100px;
+            height:400px;
             width:600px;
             border:2px solid black;
         }
+        #signin{
+            margin:10px;
+            padding:10px 80px;
+            margin-left:40px;
+            border-radius:5px;
+            cursor:grab;
+            font-size:18px;
+        }
+        .container h1{
+            margin:10px;
+            padding:20px;
+            display:block;
+        }
+        .container input{
+            margin:10px;
+            padding:15px 26px;
+            border-radius:5px;
+            background-color:cornsilk;
+            margin-left:40px;
+        }
+        .signin{
+            border:2px solid black;
+            height:400px;
+            width:300px;  
+        }
+        #links{
+            margin:10px;
+            font-size:20px;
+            padding-left:60px;
+        }
+         .container a{
+            margin:10px;
+            padding-left:10px;
+         }
+         .links{
+            margin-left:80px;
+         }
     </style>
 </head>
-<body>
-    <div class="container">
+<body> 
+<div class="container">
+    <div class="signin">
         <h1>Sign in</h1>
-        <input placeholder = "Username" type = "text" id = "username">
-        <input placeholder = "Password" type = "password" id = "password">
+        <input placeholder = "Username" type = "text" id = "username"><br>
+        <input placeholder = "Password" type = "password" id = "password"><br>
         <button id = "signin">Sign-in</button>
-        <p>or signin with</p>
-        <a href = ""></a>
-        <a href = ""></a>
+        <p id = "links">or signin with</p>
+        <div class="links">
+        <a href = "https://www.facebook.com/forced_account_switch">FB</a>
+        <a href = "https://www.instagram.com/#">IN</a>
+        </div>
+    </div>
         <div class="change">
            <h2>Welcome Back!</h2>
            <p>Welcome back! we are so happy to have you <br>here. It's great to see you here again. We hope you<br> had a safe and enjoyable time away.</p> 
